@@ -8,24 +8,18 @@ import { CategoriesListService } from '../shared/categories-list.service';
   styleUrls: ['./recipe-details.component.css']
 })
 export class RecipeDetailsComponent implements OnInit {
-  id: any;
-  private sub: any;
-  categoriesList= [];
-  constructor(private route: ActivatedRoute, private categoriesListService: CategoriesListService ) { }
+  categoriesList = [];
+  itemId: any;
+  constructor(private categoriesListService: CategoriesListService ) { }
 
   ngOnInit() {
-   
-    this.sub = this.route.params.subscribe(params => {
-      this.id = params['idMeal'];
-  });
-  this.categoriesListService.getRecipeDetails(this.id).subscribe(data =>{
-    console.log(data);
-    this.categoriesList = data.meals;
-    console.log(this.categoriesList);
-  });
+
+  // @localStorage
+  this.itemId =JSON.parse(localStorage.getItem("id"));
+  this.categoriesList.push(this.itemId);
+
   }
   ngOnDestroy() {
-    this.sub.unsubscribe();
   }
 
 }

@@ -1,0 +1,25 @@
+.example-card {
+    max-width: 400px;
+    background-color: white;
+    margin-bottom: 30px;
+    cursor: pointer;
+    max-height:500px;
+    width: 320px; height:300px;
+    box-shadow: 1px 3px 3px 0px rgba(240, 60, 60, 0.8), 3px 3px 3px 0px rgba(240, 60, 60, 0.8), 0 1px 5px 0 rgba(240, 60, 60, 0.8);
+  }
+  .container{
+    min-height: 100%;
+  }
+  .container-list{
+    margin-top:25px;
+  }
+  .title-font{
+    font-family: 'open sans'; font-size: 20px; color:#dd3939;font-weight: 600;
+  }
+  .example-header-image {
+    background-image: url('/./assets/meal-plan-bg.jpg');
+    background-size: cover;
+  }
+  .image-container{
+    width: 320px; height:250px;
+  }

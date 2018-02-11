@@ -1,29 +1,13 @@
-
-  <div fxLayout="row" fxLayoutAlign="space-around stretch" fxLayoutWrap fxLayoutGap="20px" style="margin-top:20px; margin-bottom:20px;">  
-    <mat-card class="example-card example-header-image" *ngFor="let categorie of categoriesList" (click)="onSelect(categorie)" [routerLink] = "['/recipeDetails', categorie.idMeal]">
-      <mat-card-header  class="">
-        <mat-card-title></mat-card-title>
-        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
-      </mat-card-header>
-  {{categorie.strCategoryThumb}}
-      <mat-card-content>
-        <p>{{categorie.strCategoryDescription}}</p>
-      </mat-card-content>
-
-    </mat-card> 
+<div fxLayout="row" class="container"> 
+  <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutWrap fxLayoutGap="5px" class="container-list">
+    <div class="example-card" *ngFor="let categorie of categoriesList" (click)="onSelect(categorie)" >      
+        <div><img class="image-container" src="http://{{categorie.strMealThumb}}" alt=""></div>
+        <div fxLayout="column">
+          <div fxLayoutAlign="center" class="title-font">{{categorie.strArea}} Recipe</div>
+          <div fxLayoutAlign="center" class="title-font">{{categorie.strMeal}}</div>
+        </div>     
+    </div> 
+  </div> 
+</div>
 
 
-  </div>
-
-
-  <div layout="row" fxLayoutAlign="space-around stretch" fxLayoutWrap fxLayoutGap="20px" >
-      <mat-card class="example-card example-header-image">
-
-          <mat-card-content >
-            <div>{{categorie.strArea}}</div>
-            <div>{{categorie.strMeal}} Recipe</div>
-                
-          </mat-card-content>
-         
-        </mat-card>
-  </div>

@@ -1,7 +1,23 @@
-<div fxLayout="column" fxLayoutAlign="space-around stretch">
-  <header fxFlex="75px" style="background-color:#df8282; opacity:0.6; ">
-    <h2>Food Recipes</h2>
-  </header>
+<div fxLayout="column"style="width: 100%"  >
+
+    <header style="z-index:999;width: 100%;  height: 70px; position: fixed;top:0px;left:0px;">
+      <div fxLayout="row" style=" background-image:url('../assets/meal-plan-bg.jpg'); background-repeat: no-repeat; width: 100%;  height: 70px;">
+         
+        <h2 fxFlex="95" fxLayoutAlign="center" style="color:#dd3939;">Recipe King - Be A Gordon Ramsay at home!</h2>
+        <div fxLayoutAlign="start" fxFlex="5">
+            <img src="../assets/back-arrow.svg" (click)="back()"  style="height: 50px;width: 50px; margin: 12px;" />
+             <!-- <button fxLayoutAlign="" ></button> -->
+          </div>
+
+      </div>
+      
+    </header>
+    <div style="width: 100%; height:100%; position: absolute;
+
+    top: 70px;
+    right: 0px;
+    left: 0px;">
   <router-outlet></router-outlet>
-  <!-- <app-recipes-list></app-recipes-list> -->
 </div>
+</div>
+

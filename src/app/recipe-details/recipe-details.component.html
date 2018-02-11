@@ -1,24 +1,34 @@
-<button [routerLink] = "['/recipesList']">Back</button>
+<div fxLayout="column" style="background-color:black; opacity:0.7; min-height: 100%;"> 
+    <div *ngFor="let categorie of categoriesList" style="margin-top:20px;">
+      <div fxLayoutAlign="center" class="list-details">{{categorie.strMeal}} Recipe </div>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" style="margin-top:20px;">
+          <div fxLayout="column" fxLayoutAlign="center center" class="ingredients">
+              <div><h2 fxLayoutAlign="center" class="ingredients-title">Ingredients</h2></div>   
+            <div  *ngIf="categorie.strIngredient1">{{categorie.strIngredient1}},</div>
+            <div  *ngIf="categorie.strIngredient2">{{categorie.strIngredient2}}, </div>
+            <div  *ngIf="categorie.strIngredient3">{{categorie.strIngredient3}}, </div>   
+            <div  *ngIf="categorie.strIngredient4">{{categorie.strIngredient4}}, </div>
+            <div  *ngIf="categorie.strIngredient5">{{categorie.strIngredient5}}, </div>
+            <div  *ngIf="categorie.strIngredient6">{{categorie.strIngredient6}}, </div>
+            <div  *ngIf="categorie.strIngredient7">{{categorie.strIngredient7}}, </div>
+            <div  *ngIf="categorie.strIngredient8">{{categorie.strIngredient8}}, </div>
+            <div  *ngIf="categorie.strIngredient9">{{categorie.strIngredient9}}, </div>
+            <div  *ngIf="categorie.strIngredient10">{{categorie.strIngredient10}}, </div>
+            <div  *ngIf="categorie.strIngredient11">{{categorie.strIngredient11}}, </div>
+            <div  *ngIf="categorie.strIngredient12">{{categorie.strIngredient12}}, </div>
+            <div  *ngIf="categorie.strIngredient13">{{categorie.strIngredient13}}, </div>
+            <div  *ngIf="categorie.strIngredient14">{{categorie.strIngredient14}}, </div>
+            <div  *ngIf="categorie.strIngredient15">{{categorie.strIngredient15}}, </div>
+            <div  *ngIf="categorie.strIngredient16">{{categorie.strIngredient16}}, </div>
+            <div  *ngIf="categorie.strIngredient17">{{categorie.strIngredient17}} </div>
+         </div>
+         <!-- <div fxLayout="column"><img  style="width: 300px; height:300px; margin-right:200px;" src="http://{{categorie.strMealThumb}}" alt=""></div> -->
+        </div>
+          <h2 fxLayoutAlign="center" class="ingredients-title">Instructions</h2>
+          <div fxLayoutAlign="center"><p style="width:70%; color:#FFF;font-weight: 600; margin-top:5px; line-height: 30px;font-size:18px;font-family: sans-serif;">{{categorie.strInstructions}}</p></div>
+        
+        </div>
+    
+ </div>
 
 
-      <div fxLayout="column" fxLayoutAlign="space-evenly center" *ngFor="let categorie of categoriesList">
-        <div fxFlex="50px"></div>
-  <mat-card class="example-card" >
-    <mat-card-header>
-      <mat-card-title> {{categorie.strMeal}} Recipe</mat-card-title>
-      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
-    </mat-card-header>
-<!-- <img src= {{categorie.strMealThumb}} > -->
-{{categorie.strCategoryThumb}}
-    <mat-card-content>
-      <p>{{categorie.strInstructions}}</p>
-      <p>{{categorie.strIngredient6}}</p>
-      <p>{{categorie.strIngredient1}}</p>
-      <p>{{categorie.strIngredient6}}</p>
-    </mat-card-content>
-    <!-- <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions> -->
-  </mat-card> 
-      </div>
