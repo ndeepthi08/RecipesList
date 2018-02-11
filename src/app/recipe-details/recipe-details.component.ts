@@ -13,12 +13,11 @@ export class RecipeDetailsComponent implements OnInit {
   constructor(private categoriesListService: CategoriesListService ) { }
 
   ngOnInit() {
-
   // @localStorage
   this.itemId =JSON.parse(localStorage.getItem("id"));
   this.categoriesList.push(this.itemId);
-
   }
+  
   ngOnDestroy() {
   }
 

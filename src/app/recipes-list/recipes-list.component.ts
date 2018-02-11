@@ -21,7 +21,9 @@ export class RecipesListComponent implements OnInit {
 
   onSelect(categorie){
     localStorage.setItem("id", JSON.stringify(categorie));
+    this.categoriesListService.modelData(true);
     this.router.navigate(['recipeDetails'])
+    
 
   }
 }

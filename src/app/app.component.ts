@@ -1,22 +1,25 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router'
+import { Router } from '@angular/router'
+import { CategoriesListService } from './shared/categories-list.service';
+// import { HttpModule } from '@angular/http';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  backBtn: boolean= false;
+  backBtn: boolean = false;
 
-  back()
-  {
+  back() {
+    this.backBtn = false;
     this.route.navigate(['recipesList']);
-    // localStorage.clear();
   }
 
-  constructor(private route:Router)
-  {
-    
+  constructor(private route: Router, private categoriesListService: CategoriesListService) {
+    this.categoriesListService.model$.subscribe(this.updatecount.bind(this));
+  }
+  updatecount(msg) {
+    this.backBtn = msg;
   }
 }

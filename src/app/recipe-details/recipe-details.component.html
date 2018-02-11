@@ -1,7 +1,7 @@
-<div fxLayout="column" style="background-color:black; opacity:0.7; min-height: 100%;"> 
-    <div *ngFor="let categorie of categoriesList" style="margin-top:20px;">
+<div fxLayout="column" class="details-container"> 
+    <div *ngFor="let categorie of categoriesList" class="categorie-list">
       <div fxLayoutAlign="center" class="list-details">{{categorie.strMeal}} Recipe </div>
-      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" style="margin-top:20px;">
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="categorie-list">
           <div fxLayout="column" fxLayoutAlign="center center" class="ingredients">
               <div><h2 fxLayoutAlign="center" class="ingredients-title">Ingredients</h2></div>   
             <div  *ngIf="categorie.strIngredient1">{{categorie.strIngredient1}},</div>
@@ -22,10 +22,9 @@
             <div  *ngIf="categorie.strIngredient16">{{categorie.strIngredient16}}, </div>
             <div  *ngIf="categorie.strIngredient17">{{categorie.strIngredient17}} </div>
          </div>
-         <!-- <div fxLayout="column"><img  style="width: 300px; height:300px; margin-right:200px;" src="http://{{categorie.strMealThumb}}" alt=""></div> -->
         </div>
           <h2 fxLayoutAlign="center" class="ingredients-title">Instructions</h2>
-          <div fxLayoutAlign="center"><p style="width:70%; color:#FFF;font-weight: 600; margin-top:5px; line-height: 30px;font-size:18px;font-family: sans-serif;">{{categorie.strInstructions}}</p></div>
+          <div fxLayoutAlign="center"><p class="instructions">{{categorie.strInstructions}}</p></div>
         
         </div>
     

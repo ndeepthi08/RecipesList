@@ -3,6 +3,8 @@ import { AppComponent } from './app.component';
 import {Router,RouterOutlet} from '@angular/router'
 import {By} from "@angular/platform-browser";
 import {RouterTestingModule} from '@angular/router/testing'
+import { CategoriesListService } from './shared/categories-list.service';
+import { HttpModule } from '@angular/http';
 class RouterStub 
 {
   navigate(url)
@@ -16,14 +18,15 @@ fdescribe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports : [RouterTestingModule.withRoutes([])],
+      imports : [RouterTestingModule.withRoutes([]), HttpModule],
       declarations: [
         AppComponent
-      ],
+      ], 
       providers : [{
         provide: Router,
-        useClass: RouterStub
-    }]
+        useClass: RouterStub,
+
+    }, CategoriesListService]
     }).compileComponents();
   }));
   beforeEach(() => {
